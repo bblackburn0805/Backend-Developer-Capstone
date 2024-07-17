@@ -1,0 +1,22 @@
+<!--
+Original code from Coursera - The Full Stack course.
+https://www.coursera.org/learn/the-full-stack/home/welcome/
+-->
+
+{% extends 'base.html' %}{% load static %}{% block content %}
+<h1>Menu</h1>
+<!--Begin col-->
+<div class="column">
+    {% for item in menu.menu %}
+    <p>
+        <a href="{% url 'menu_item' pk=item.pk %}">
+            {{ item.name }}
+            </a>
+        <span class="menu-price">
+            ${{ item.price }}.00
+        </span>
+    </p>
+    {% endfor %}
+</div>
+<!--End col-->
+{% endblock %}
